@@ -13,7 +13,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 import numpy as np
 from pytorch_lightning import LightningModule, Trainer
 from torch.utils.data import DataLoader, random_split
-from pytorch_lightning.torchmetrics.classification import Accuracy
+from torchmetrics import Accuracy
 from torchvision import transforms
 
 PATH_DATASETS = os.environ.get("PATH_DATASETS", ".")
@@ -100,7 +100,7 @@ class CustomResNet(LightningModule):
         self.maxpoollayer = nn.Sequential(nn.MaxPool2d(kernel_size=4,stride = 4))
 
         self.fclayer = nn.Linear(512, self.num_classes)
-        self.accuracy = Accuracy()
+        self.accuracy = Accuracy(task="multiclass", num_classes=10)
 
     def forward(self, x):
         x = self.preplayer(x)
@@ -117,35 +117,32 @@ class CustomResNet(LightningModule):
 
         return F.log_softmax(x,dim=1)
 
+    def get_loss_accuracy(self, batch):
+        images, labels = batch
+        predictions = self(images)
+        loss = self.loss_function(predictions, labels)
+        accuracy = self.accuracy(predictions, labels)
+        
+        return loss, accuracy * 100
+
     def training_step(self, batch, batch_idx):
-        x, y = batch
-        logits = self(x)
-        loss_fn= torch.nn.CrossEntropyLoss()
-        loss = loss_fn(logits, y)
-        acc=self.accuracy(logits,y) * 100
-        self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True)
-        self.log("train_accuracy", acc, on_step=True, on_epoch=True, prog_bar=True)
+        loss, accuracy = self.get_loss_accuracy(batch)
+        self.log("loss/train", loss, on_epoch=True, prog_bar=True, logger=True)
+        self.log("acc/train", accuracy, on_epoch=True, prog_bar=True, logger=True)
+        
         return loss
 
-
-
-    def evaluate(self, batch, stage=None):
-        x, y = batch
-        logits = self(x)
-        loss_fn= torch.nn.CrossEntropyLoss()
-        loss = loss_fn(logits, y)
-        acc=self.accuracy(logits,y) * 100
-
-        if stage:
-            self.log(f"{stage}_loss", loss, prog_bar=True)
-            self.log(f"{stage}_acc", acc, prog_bar=True)
-
     def validation_step(self, batch, batch_idx):
-        self.evaluate(batch, "val")
+        loss, accuracy = self.get_loss_accuracy(batch)
+        self.log("loss/val", loss, on_epoch=True, prog_bar=True, logger=True)
+        self.log("acc/val", accuracy, on_epoch=True, prog_bar=True, logger=True)
+
+        return loss
 
     def test_step(self, batch, batch_idx):
-        self.evaluate(batch, "test")
+        loss = self.validation_step(batch, batch_idx)
 
+        return loss
 
     def configure_optimizers(self):
         LEARNING_RATE=0.03
