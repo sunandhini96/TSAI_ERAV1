@@ -82,7 +82,7 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer',
             'dog', 'frog', 'horse', 'ship', 'truck')
 
 
-def save_misclassified_images(error_images, error_label, error_pred, error_prob):
+def save_misclassified_images(error_images, error_label, error_pred, error_prob,path):
   plt.figure()
   for ind, image in enumerate(error_images):
       # plt.subplot(h_size, w_size, ind + 1)
@@ -92,7 +92,7 @@ def save_misclassified_images(error_images, error_label, error_pred, error_prob)
       true_label = classes[error_label[ind]]
       plt.title(f'predict: {pred_label} ({pred_prob:.2f}) true: {true_label}')
       plt.axis('off')
-      plt.imsave("misclassified"+str(ind)+".jpg",denormalize_image(image.permute(1, 2, 0).cpu().numpy()))
+      plt.imsave(path+"misclassified"+str(ind)+".jpg",denormalize_image(image.permute(1, 2, 0).cpu().numpy()))
       plt.clf()
 
 
