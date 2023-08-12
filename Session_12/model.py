@@ -100,7 +100,7 @@ class CustomResNet(LightningModule):
         self.maxpoollayer = nn.Sequential(nn.MaxPool2d(kernel_size=4,stride = 4))
 
         self.fclayer = nn.Linear(512, self.num_classes)
-        self.accuracy = accuracy(task="multiclass", num_classes=10)
+        self.accuracy = accuracy(task='multiclass', num_classes=10)
 
     def forward(self, x):
         x = self.preplayer(x)
