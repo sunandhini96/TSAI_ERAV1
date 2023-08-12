@@ -126,6 +126,8 @@ class CustomResNet(LightningModule):
         
         return loss, accuracy * 100
 
+
+    
     def training_step(self, batch, batch_idx):
         loss, accuracy = self.get_loss_accuracy(batch)
         self.log("loss/train", loss, on_epoch=True, prog_bar=True, logger=True)
