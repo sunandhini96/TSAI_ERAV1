@@ -1,7 +1,7 @@
 import torch
-from src.model import CustomResNet
+from model import CustomResNet
 import numpy as np
-from src.datamodule import CIFARDataModule
+from datamodule import CIFARDataModule
 import matplotlib.pyplot as plt
 import seaborn as sn
 import math
