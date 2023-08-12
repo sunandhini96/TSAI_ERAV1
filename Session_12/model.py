@@ -16,6 +16,7 @@ from torch.utils.data import DataLoader, random_split
 from torchmetrics import Accuracy
 from torchvision import transforms
 
+PATH_DATASETS = os.environ.get("PATH_DATASETS", ".")
 class CustomResNet(LightningModule):
     def __init__(self, num_classes=10, data_dir=PATH_DATASETS, hidden_size=16, learning_rate=0.05):
         super(CustomResNet, self).__init__()
