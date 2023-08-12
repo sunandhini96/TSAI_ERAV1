@@ -116,13 +116,12 @@ class CustomResNet(LightningModule):
         x = self.fclayer(x)
 
         return F.log_softmax(x,dim=-1)
-
-    def get_loss_accuracy(self, batch):
+   def get_loss_accuracy(self, batch):
         images, labels = batch
         predictions = self(images)
-        accuracy = (predictions == labels).float().mean()
+        predicted_classes = torch.argmax(predictions, dim=1)
+        accuracy = (predicted_classes == labels).float().mean()
         loss = self.loss_function(predictions, labels)
-        #accuracy = self.accuracy(predictions, labels)
         
         return loss, accuracy * 100
 
