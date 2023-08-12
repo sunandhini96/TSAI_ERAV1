@@ -100,7 +100,7 @@ class CustomResNet(LightningModule):
         self.maxpoollayer = nn.Sequential(nn.MaxPool2d(kernel_size=4,stride = 4))
 
         self.fclayer = nn.Linear(512, self.num_classes)
-        self.accuracy = Accuracy(task='multiclass', num_classes=10)
+        #self.accuracy = Accuracy(task='multiclass', num_classes=10)
 
     def forward(self, x):
         x = self.preplayer(x)
@@ -120,8 +120,9 @@ class CustomResNet(LightningModule):
     def get_loss_accuracy(self, batch):
         images, labels = batch
         predictions = self(images)
+        accuracy = (preds == labels).float().mean()
         loss = self.loss_function(predictions, labels)
-        accuracy = self.accuracy(predictions, labels)
+        #accuracy = self.accuracy(predictions, labels)
         
         return loss, accuracy * 100
 
