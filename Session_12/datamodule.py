@@ -69,12 +69,12 @@ class CIFAR10DataModule(pl.LightningDataModule):
 
         # Assign train/val datasets 
         if stage == "fit" or stage is None:
-            self.train_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=True),  self.train_transforms)
-            self.val_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=False), self.test_transforms)
+            self.train_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=True,download=True),  self.train_transforms)
+            self.val_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=False,download=True), self.test_transforms)
 
         # Assign test dataset
         if stage == "test" or stage is None:
-            self.test_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=False), self.test_transforms)
+            self.test_data = AlbumentationsDataset(CIFAR10(self.data_dir, train=False,download=True), self.test_transforms)
     
     def train_dataloader(self):
         return DataLoader(self.train_data, batch_size=self.batch_size, shuffle=True, num_workers=self.num_workers, pin_memory=True)
