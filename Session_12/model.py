@@ -120,7 +120,7 @@ class CustomResNet(LightningModule):
     def get_loss_accuracy(self, batch):
         images, labels = batch
         predictions = self(images)
-        accuracy = (preds == labels).float().mean()
+        accuracy = (predictions == labels).float().mean()
         loss = self.loss_function(predictions, labels)
         #accuracy = self.accuracy(predictions, labels)
         
