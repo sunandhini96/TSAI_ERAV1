@@ -13,7 +13,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 import numpy as np
 from pytorch_lightning import LightningModule, Trainer
 from torch.utils.data import DataLoader, random_split
-from torchmetrics import accuracy
+from torchmetrics import Accuracy
 from torchvision import transforms
 
 PATH_DATASETS = os.environ.get("PATH_DATASETS", ".")
@@ -100,7 +100,7 @@ class CustomResNet(LightningModule):
         self.maxpoollayer = nn.Sequential(nn.MaxPool2d(kernel_size=4,stride = 4))
 
         self.fclayer = nn.Linear(512, self.num_classes)
-        self.accuracy = accuracy(task='multiclass', num_classes=10)
+        self.accuracy = Accuracy(task='multiclass', num_classes=10)
 
     def forward(self, x):
         x = self.preplayer(x)
