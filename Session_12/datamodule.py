@@ -38,9 +38,9 @@ class AlbumentationsDataset(Dataset):
     def __len__(self):
         return len(self.dataset)
 
-
+NUM_WORKERS = int(os.cpu_count() / 2)
 class CIFAR10DataModule(pl.LightningDataModule):
-    def __init__(self, data_dir, batch_size, num_workers, train_transforms, val_transforms, test_transforms):
+    def __init__(self, data_dir, batch_size, num_workers=NUM_WORKERS):
         super().__init__()
         self.data_dir = data_dir
         self.batch_size = batch_size
