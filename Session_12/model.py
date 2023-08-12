@@ -122,9 +122,9 @@ class CustomResNet(LightningModule):
         logits = self(x)
         loss_fn= torch.nn.CrossEntropyLoss()
         loss = loss_fn(logits, y)
-        accuracy=self.accuracy(logits,y) * 100
+        acc=self.accuracy(logits,y) * 100
         self.log("train_loss", loss, on_step=True, on_epoch=True, prog_bar=True)
-        self.log("train_accuracy", accuracy, on_step=True, on_epoch=True, prog_bar=True)
+        self.log("train_accuracy", acc, on_step=True, on_epoch=True, prog_bar=True)
         return loss
 
 
@@ -134,11 +134,11 @@ class CustomResNet(LightningModule):
         logits = self(x)
         loss_fn= torch.nn.CrossEntropyLoss()
         loss = loss_fn(logits, y)
-        accuracy=self.accuracy(logits,y) * 100
+        acc=self.accuracy(logits,y) * 100
 
         if stage:
             self.log(f"{stage}_loss", loss, prog_bar=True)
-            self.log(f"{stage}_acc", accuracy, prog_bar=True)
+            self.log(f"{stage}_acc", acc, prog_bar=True)
 
     def validation_step(self, batch, batch_idx):
         self.evaluate(batch, "val")
