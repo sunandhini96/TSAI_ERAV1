@@ -70,7 +70,13 @@ def get_misclassified_images():
 
 
 def denormalize_image(image):
-    return image * [0.24703233, 0.24348505, 0.26158768] + [0.49139968, 0.48215827, 0.44653124]
+    mean = [0.49139968, 0.48215827, 0.44653124]
+    std = [0.24703233, 0.24348505, 0.26158768]
+    
+    denormalized_image = image * std + mean
+    denormalized_image = np.clip(denormalized_image, 0, 1)  # Clip values to [0, 1] range
+    
+    return denormalized_image
 
 classes = ('plane', 'car', 'bird', 'cat', 'deer',
             'dog', 'frog', 'horse', 'ship', 'truck')
