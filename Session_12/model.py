@@ -103,7 +103,7 @@ class CustomResNet(LightningModule):
         #self.accuracy = Accuracy(task='multiclass', num_classes=10)
 
     def forward(self, x):
-        x = self.preplayer(x)
+        x = self.prep_layer(x)
         x = self.layer_1(x)
         r1 = self.resblock1(x)
         x = x + r1
