@@ -115,7 +115,7 @@ class CustomResNet(LightningModule):
         x = x.view((x.shape[0],-1))
         x = self.fclayer(x)
 
-        return x
+        return F.log_softmax(x,dim=-1)
 
     def get_loss_accuracy(self, batch):
         images, labels = batch
