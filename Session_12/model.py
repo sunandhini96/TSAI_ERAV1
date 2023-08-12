@@ -100,6 +100,10 @@ class CustomResNet(LightningModule):
         self.maxpoollayer = nn.Sequential(nn.MaxPool2d(kernel_size=4,stride = 4))
 
         self.fclayer = nn.Linear(512, self.num_classes)
+    def loss_function(self, pred, target):
+        criterion = torch.nn.CrossEntropyLoss()
+        
+        return criterion(pred, target)
 
 
     def forward(self, x):
