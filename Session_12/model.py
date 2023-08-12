@@ -82,7 +82,7 @@ class CustomResNet(LightningModule):
             nn.ReLU(),
         )
 
-        self.layer3 = nn.Sequential(
+        self.layer_3 = nn.Sequential(
             nn.Conv2d(256, 512, kernel_size=3, stride=1, bias=False, padding=1),
             nn.MaxPool2d(kernel_size = 2, stride = 2),
             nn.BatchNorm2d(512),
@@ -104,11 +104,11 @@ class CustomResNet(LightningModule):
 
     def forward(self, x):
         x = self.preplayer(x)
-        x = self.layer1(x)
+        x = self.layer_1(x)
         r1 = self.resblock1(x)
         x = x + r1
-        x = self.layer2(x)
-        x = self.layer3(x)
+        x = self.layer_2(x)
+        x = self.layer_3(x)
         r2 = self.resblock2(x)
         x = x + r2
         x = self.maxpoollayer(x)
