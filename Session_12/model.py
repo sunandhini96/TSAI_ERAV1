@@ -13,7 +13,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 import numpy as np
 from pytorch_lightning import LightningModule, Trainer
 from torch.utils.data import DataLoader, random_split
-from torchmetrics.functionsl import accuracy
+from torchmetrics.functions import accuracy
 from torchvision import transforms
 
 PATH_DATASETS = os.environ.get("PATH_DATASETS", ".")
