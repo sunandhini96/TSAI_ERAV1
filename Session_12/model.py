@@ -116,7 +116,7 @@ class CustomResNet(LightningModule):
         x = self.fclayer(x)
 
         return F.log_softmax(x,dim=-1)
-   def get_loss_accuracy(self, batch):
+    def get_loss_accuracy(self, batch):
         images, labels = batch
         predictions = self(images)
         predicted_classes = torch.argmax(predictions, dim=1)
@@ -124,9 +124,9 @@ class CustomResNet(LightningModule):
         loss = self.loss_function(predictions, labels)
         
         return loss, accuracy * 100
-
-
     
+    
+
     def training_step(self, batch, batch_idx):
         loss, accuracy = self.get_loss_accuracy(batch)
         self.log("loss/train", loss, on_epoch=True, prog_bar=True, logger=True)
