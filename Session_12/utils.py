@@ -1,7 +1,7 @@
 import torch
 from model import CustomResNet
 import numpy as np
-from datamodule import CIFARDataModule
+from datamodule import CIFAR10DataModule
 import matplotlib.pyplot as plt
 import seaborn as sn
 import math
@@ -27,7 +27,7 @@ def load_model():
 
 
 def get_misclassified_images():
-    data_module = CIFARDataModule(batch_size=1)
+    data_module = CIFAR10DataModule(batch_size=1)
     data_module.setup()
 
     error_images = []
