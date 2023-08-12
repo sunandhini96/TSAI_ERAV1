@@ -17,7 +17,7 @@ Session_12
 ```
 ## Running the model by using training_using_lightning.ipynb ( first cloning github repo and run the model).
 
-## Output :
+## Output of the model :
  
 Trained the model using 24 epochs. Last epoch output shown below.
 
@@ -37,11 +37,17 @@ Testing DataLoader 0: 100%
          acc/val             91.8499984741211
         loss/val             0.307132363319397
 
+
+  ## Accuracy and loss plots:
+  
+  <img width="900" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/95ac4a71-b874-4bc7-b520-4b4f47d369ad">
+
+
 ## Misclassified Images  :
 
 ![image](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1be6a5d3-c8ce-494e-8d36-138b4d99bc18)
 
-## Grad Cam Images : 
+## Grad Cam Images for misclassified data: 
 
 ![image](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/499be2c0-82ca-45e5-a499-677831dfc5ec)
 
