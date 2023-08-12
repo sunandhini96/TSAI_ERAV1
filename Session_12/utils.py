@@ -14,6 +14,8 @@ from pytorch_grad_cam.utils.image import show_cam_on_image
 import torch
 from torchvision import datasets, transforms
 import random
+import os
+PATH_DATASETS = os.environ.get("PATH_DATASETS", ".")
 
 device = "cpu"
 
@@ -27,7 +29,7 @@ def load_model():
 
 
 def get_misclassified_images():
-    data_module = CIFAR10DataModule(batch_size=1)
+    data_module = CIFAR10DataModule(data_dir=PATH_DATASETS,batch_size=1)
     data_module.setup()
 
     error_images = []
@@ -51,7 +53,7 @@ def get_misclassified_images():
             # Grad-CAM 
             original_image =_X_valid
             _X_valid.requires_grad = True
-            target_layers = [model.layer3[-1]]
+            target_layers = [model.layer_3[-1]]
             cam = GradCAM(model=model, target_layers=target_layers, use_cuda=False)
             grayscale_cam = cam(input_tensor=_X_valid, targets=None)
             grayscale_cam = grayscale_cam[0, :]
