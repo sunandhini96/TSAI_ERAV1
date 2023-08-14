@@ -1,0 +1,9 @@
+torch
+albumentations
+pytorch-lightning
+torchvision
+torch-lr-finder
+grad-cam
+pillow
+numpy
+gradio
