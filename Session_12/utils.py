@@ -88,11 +88,12 @@ def save_misclassified_images(error_images, error_label, error_pred, error_prob,
       # plt.subplot(h_size, w_size, ind + 1)
       plt.imshow(denormalize_image(image.permute(1, 2, 0).cpu().numpy()))
       pred_label = classes[error_pred[ind]]
+      #print("---",pred_label)
       pred_prob = error_prob[ind]
       true_label = classes[error_label[ind]]
       plt.title(f'predict: {pred_label} ({pred_prob:.2f}) true: {true_label}')
       plt.axis('off')
-      plt.imsave(path+"misclassified"+str(ind)+".jpg",denormalize_image(image.permute(1, 2, 0).cpu().numpy()))
+      plt.imsave(path+"misclassified_"+str(ind)+"_GT_"+true_label+"_Pred_"+pred_label+".jpg",denormalize_image(image.permute(1, 2, 0).cpu().numpy()))
       plt.clf()
 
 
