@@ -51,6 +51,10 @@ Testing DataLoader 0: 100%
 
 ![image](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/499be2c0-82ca-45e5-a499-677831dfc5ec)
 
+[Link to Hugging Face Space]   (https://huggingface.co/spaces/Gosula/ERA_S12)
+
+
+
 
 
 
