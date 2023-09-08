@@ -93,7 +93,7 @@ class OpusDataSetModule(LightningDataModule):
             print(f"Source Tokenizer Vocab Size : {self.tokenizer_src.get_vocab_size()}")
             print(f"Target Tokenizer Vocab Size : {self.tokenizer_tgt.get_vocab_size()}")
             print("\n")
-    def collate_fn(batch):
+    def collate_fn(self,batch):
         encoder_input_max=max(x["encoder_str_length"] for x in batch)
         decoder_input_max=max(x["decoder_str_length"] for x in batch)
         encoder_inputs=[]
@@ -123,7 +123,7 @@ class OpusDataSetModule(LightningDataModule):
         }
     def train_dataloader(self):
         return DataLoader(
-            dataset=self.train_dataset, batch_size=self.config["batch_size"], shuffle=True,collate_fn=collate_fn
+            dataset=self.train_dataset, batch_size=self.config["batch_size"], shuffle=True,collate_fn=self.collate_fn
         )
 
 
