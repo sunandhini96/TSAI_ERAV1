@@ -9,12 +9,12 @@ from model import build_transformer
 from utils import causal_mask
 
 from config import get_config
-
+from datamodule import OpusDataSetModule
 config = get_config()
 
 
 
-class BilanguageModel(LightningModule):
+class BilingualModel(LightningModule):
     def __init__(self, learning_rate, tokenizer_src, tokenizer_tgt, config=config):
 
         super().__init__()
@@ -33,7 +33,7 @@ class BilanguageModel(LightningModule):
 
         self.last_batch = None
 
-        self.net = build_transformer(
+        self.network = build_transformer(
             self.src_vocab_size,
             self.tgt_vocab_size,
             self.seq_len,
@@ -59,13 +59,13 @@ class BilanguageModel(LightningModule):
         self.bleu_score = BLEUScore()
 
     def forward(self, encoder_input, decoder_input, encoder_mask, decoder_mask):
-        encoder_output = self.net.encode(
+        encoder_output = self.network.encode(
             encoder_input, encoder_mask
         )  # (B, seq_len, seq_len)
-        decoder_output = self.net.decode(
+        decoder_output = self.network.decode(
             encoder_output, encoder_mask, decoder_input, decoder_mask
         )
-        proj_output = self.net.project(decoder_output)  # (B, seq_len, vocab_size)
+        proj_output = self.network.project(decoder_output)  # (B, seq_len, vocab_size)
 
         return proj_output
 
@@ -141,7 +141,7 @@ class BilanguageModel(LightningModule):
         eos_idx = self.tokenizer_tgt.token_to_id("[EOS]")
 
         # encoder output
-        encoder_output = self.net.encode(source, source_mask)
+        encoder_output = self.network.encode(source, source_mask)
         decoder_input = torch.empty(1, 1).fill_(sos_idx).type_as(source).to(device)
         while True:
             if decoder_input.size(1) == max_len:
@@ -150,12 +150,12 @@ class BilanguageModel(LightningModule):
             decoder_mask = (
                 causal_mask(decoder_input.size(1)).type_as(source_mask).to(device)
             )
-            out = self.net.decode(
+            out = self.network.decode(
                 encoder_output, source_mask, decoder_input, decoder_mask
             )
 
             # get next token
-            prob = self.net.project(out[:, -1])
+            prob = self.network.project(out[:, -1])
             _, next_word = torch.max(prob, dim=1)
             decoder_input = torch.cat(
                 [
@@ -213,3 +213,15 @@ class BilanguageModel(LightningModule):
         self.log("Validation - BLEU", bleu, prog_bar=True)
 
         model.train()
+
+
+data = OpusDataSetModule()
+data.setup()
+
+src, tgt = data.tokenizer_src, data.tokenizer_tgt
+model = BilingualModel(learning_rate=1e-4, tokenizer_src=src, tokenizer_tgt=tgt)
+
+trainer = pl.Trainer(precision=16, max_epochs=config_['num_epochs'], accelerator="gpu")
+
+trainer.fit(model, data)
+
