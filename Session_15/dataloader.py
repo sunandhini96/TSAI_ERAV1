@@ -13,7 +13,7 @@ from config import get_config
 
 config = get_config()
 
-class OpusData(LightningDataModule):
+class OpusDataSetModule(LightningDataModule):
     def __init__(self, config=config):
         super().__init__()
 
