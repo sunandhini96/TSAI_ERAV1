@@ -53,9 +53,10 @@ class OpusDataSetModule(LightningDataModule):
             train_ds_raw, val_ds_raw = random_split(
                 ds_raw, [train_ds_size, val_ds_size]
             )
-
+            filtered_train_ds = [k for k in train_ds_raw if len(k["translation"][config["lang_src"]])<=150] # and (len(k["translation"][config["lang_tgt"]])<=len(k["translation"][config["lang_src"]]) + 10)]
+            filtered_train_ds = [k for k in filtered_train_ds if len(k["translation"][config["lang_tgt"]])<len(k["translation"][config["lang_src"]]) + 10]
             self.train_dataset = BilingualDataset(
-                train_ds_raw,
+                filtered_train_dstrain_ds_raw,
                 self.tokenizer_src,
                 self.tokenizer_tgt,
                 self.config["lang_src"],
