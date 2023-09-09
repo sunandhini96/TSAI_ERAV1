@@ -63,16 +63,17 @@ class OpusDataSetModule(LightningDataModule):
                 self.config["lang_tgt"],
                 self.config["seq_len"],
             )
-
+            filtered_val_ds = [k for k in val_ds_raw if len(k["translation"][config["lang_src"]])<=150] # and (len(k["translation"][config["lang_tgt"]])<=len(k["translation"][config["lang_src"]]) + 10)]
+            filtered_val_ds = [k for k in filtered_val_ds if len(k["translation"][config["lang_tgt"]])<len(k["translation"][config["lang_src"]]) + 10]
             self.val_dataset = BilingualDataset(
-                val_ds_raw,
+                filtered_val_ds,
                 self.tokenizer_src,
                 self.tokenizer_tgt,
                 self.config["lang_src"],
                 self.config["lang_tgt"],
                 self.config["seq_len"],
             )
-
+           
             # Find the max length of each sentence in the source and target sentnece
             max_len_src = 0
             max_len_tgt = 0
