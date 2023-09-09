@@ -1,5 +1,7 @@
 
-# Task : Training Encoder-Decoder  Transformer from scratch on opus book dataset:
+# Task : Language translation Encoder-Decoder  Transformer from scratch on opus book dataset:
+
+In this project, the Transformer encoder-decoder architecture is utilized for language translation from english to italian
 
 Rewrite the whole code covered in the class in Pytorch-Lightning (code copy will not be provided)
 
@@ -32,6 +34,16 @@ pip install -r requirements.txt
 --> Session-15_training.ipynb : training the transformer model code
 
 # Transformer Architecture :
+
+the Transformer architecture, a neural network model known for its effectiveness in various natural language processing (NLP) tasks, particularly in sequence-to-sequence tasks like machine translation and text summarization. The architecture consists of two main components: the Transformer Encoder and Transformer Decoder
+
+## Transformer Encoder
+
+The Transformer Encoder is responsible for processing the input data. In our context, the input data can be text, images, or any other form of structured data. 
+
+## Transformer Decoder
+
+The Transformer Decoder takes the information processed by the Encoder and generates an output sequence, making it suitable for sequence-to-sequence tasks.
 
 ![image](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/9f57d48c-167d-448d-b8ec-d60106647eb7)
 
