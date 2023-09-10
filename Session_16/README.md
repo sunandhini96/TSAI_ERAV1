@@ -47,19 +47,21 @@ pip install -r requirements.txt
 
 --> training_dp_ps.ipynb : training the transformer model code (here we applied Parameter Sharing(ps), Automatic mixed Preciison(amp) and Dynamic Padding(dp))
 
-# Dymanic Padding : (Smart Batching) 
+# Training Techniques:
+
+## Dymanic Padding : (Smart Batching) 
 
 In simpler terms, instead of always adding the same amount of extra "padding" tokens to make all sentences in a batch the same length, we add just enough padding to match the length of the longest sentence in that specific batch. This way, we adapt the padding to the content of each batch, which we call "dynamic" padding.
 
 <img width="659" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/dcb5dc4e-e497-49b0-8aec-22f81d572096">
 
-# Automatic Mixed Precision Package
+## Automatic Mixed Precision Package
 
 Reducing numeric precision involves making computations with less detailed numbers, and it can help make predictions faster. It's like using rounded numbers instead of very precise ones. This is a broad approach that can speed up predictions in various ways.
 
 <img width="524" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/5f4bfc6e-90c6-4fb6-b6af-a1076b9b5839">
 
-# Parameter Sharing
+## Parameter Sharing
 Parameter sharing across layers is a technique where some of the model's parameters are reused or shared between different layers. We used in our transformer model the Cycle Revolution method, this parameter sharing means that certain parts of the model, such as the self-attention mechanism or feedforward layers, may use the same weights or parameters for multiple layers. This can help improve efficiency and reduce the number of parameters in the model while maintaining its ability to learn and represent complex patterns in the data.
 
 <img width="424" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/55d76a76-3083-4291-bb82-93f81ddaca49">
