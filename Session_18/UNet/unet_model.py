@@ -61,7 +61,7 @@ class ContractingBlock(nn.Module):
             nn.ReLU(inplace=True)
         )
        
-    def get_pooling_layer(self,pool,out_cannels):
+    def get_pooling_layer(self,pool,out_channels):
         if pool == "max":
             return nn.MaxPool2d(kernel_size=2, stride=2)
         elif pool== "stridedconv":
