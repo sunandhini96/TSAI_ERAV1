@@ -108,7 +108,7 @@ def validate(val_loader, model, criterion, epoch, params,test_losses):
                 "Epoch: {epoch}. Validation. {metric_monitor}".format(epoch=epoch, metric_monitor=metric_monitor)
             )
         test_losses.append(test_loss)
-        print("Test loss :", test_loss)
+        #print("Test loss :", test_loss)
         return test_losses
 
 
