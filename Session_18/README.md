@@ -1,3 +1,11 @@
+#  Contributors :
+
+## Gosula Sunandini 
+github repository : https://github.com/sunandhini96
+## Katipally Vigneshwar Reddy
+github repository : https://github.com/katipallyvig8899
+
+
 # Problem Statement :
 
 # First Part : Creating UNET architecture for image segmentation task from scratch
@@ -11,6 +19,8 @@ case 2: MP+Tr+Dice Loss
 case 3: StrConv+Tr+CE
 
 case 4: StrConv+Ups+Dice Loss
+
+
 
 ## Usage :
 
