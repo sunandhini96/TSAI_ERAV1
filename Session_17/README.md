@@ -16,7 +16,7 @@ github repository : https://github.com/katipallyvig8899
 
 Clone the repository
 
-!git clone [[https://github.com/sunandhini96/ERA_Session5.git](https://github.com/sunandhini96/TSAI_ERAV1.git)](https://github.com/sunandhini96/TSAI_ERAV1.git)
+!git clone https://github.com/sunandhini96/TSAI_ERAV1.git
 
 cd Session_17
 
