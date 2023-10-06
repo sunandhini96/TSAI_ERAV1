@@ -67,7 +67,7 @@ class MetricMonitor:
 # In[ ]:
 
 
-def train(train_loader, model, criterion, optimizer, epoch, params,train_lossses):
+def train(train_loader, model, criterion, optimizer, epoch, params,train_losses):
     metric_monitor = MetricMonitor()
     model.train()
     train_loss=0
