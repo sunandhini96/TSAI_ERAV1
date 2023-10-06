@@ -125,6 +125,8 @@ def create_model(params):
 
 
 def train_and_validate(model, train_dataset, val_dataset, params,loss_fn):
+    train_losses=[]
+    test_losses=[]
     train_loader = DataLoader(
         train_dataset,
         batch_size=params["batch_size"],
@@ -139,8 +141,7 @@ def train_and_validate(model, train_dataset, val_dataset, params,loss_fn):
         num_workers=params["num_workers"],
         pin_memory=True,
     )
-    train_losses=[]
-    test_losses=[]
+
     criterion = loss_fn
     optimizer = torch.optim.Adam(model.parameters(), lr=params["lr"])
     for epoch in range(1, params["epochs"] + 1):
