@@ -47,12 +47,12 @@ class ContractingBlock(nn.Module):
     def __init__(self, in_channels, out_channels,pool="none"):
         super(ContractingBlock, self).__init__()
 
-        self.double_conv=DoubleConv(in_channels,out_channels)
+        self.double_conv=self.DoubleConv(in_channels,out_channels)
 
-        self.pool_layer = get_pooling_layer(pool,out_channels)
+        self.pool_layer = self.get_pooling_layer(pool,out_channels)
 
     def DoubleConv(self,in_channels,out_channels):
-       return nn.Sequential(
+        return nn.Sequential(
             nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
@@ -63,11 +63,11 @@ class ContractingBlock(nn.Module):
        
     def get_pooling_layer(self,pool,out_cannels):
         if pool == "max":
-          return nn.MaxPool2d(kernel_size=2, stride=2)
+            return nn.MaxPool2d(kernel_size=2, stride=2)
         elif pool== "stridedconv":
-          return nn.Conv2d(out_channels,out_channels,kernel_size=3,stride=2,padding=1)
+            return nn.Conv2d(out_channels,out_channels,kernel_size=3,stride=2,padding=1)
         else:
-          return nn.Identity()
+            return nn.Identity()
 
     def forward(self, x):
 
@@ -82,11 +82,11 @@ class ExpandingBlock(nn.Module):
     def __init__(self, in_channels, out_channels,up_sample="transpose"):
         super(ExpandingBlock, self).__init__()
 
-        self.upsample = get_upsampling_layer(in_channels,out_channels,up_sample)
-        self.double_conv=DoubleConv(in_channels,out_channels)
+        self.upsample = self.get_upsampling_layer(in_channels,out_channels,up_sample)
+        self.double_conv=self.DoubleConv(in_channels,out_channels)
 
     def DoubleConv(self,in_channels,out_channels):
-       return nn.Sequential(
+        return nn.Sequential(
             nn.Conv2d(in_channels, out_channels, kernel_size=3, padding=1),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(inplace=True),
@@ -95,14 +95,14 @@ class ExpandingBlock(nn.Module):
             nn.ReLU(inplace=True)
         )
     def get_upsampling_layer(self,in_channels,out_channels,up_sample):
-      if up_sample=="upsample":
-        return nn.Sequential(
+        if up_sample=="upsample":
+            return nn.Sequential(
             nn.Upsample(scale_factor=2, mode='bilinear', align_corners=False),
             nn.Conv2d(in_channels, in_channels//2, kernel_size=1)
         )
         
-      else:
-        return nn.ConvTranspose2d(in_channels, in_channels//2, kernel_size=2, stride=2)
+        else:
+            return nn.ConvTranspose2d(in_channels, in_channels//2, kernel_size=2, stride=2)
 
     def forward(self, x, skip):
         x = self.upsample(x)
