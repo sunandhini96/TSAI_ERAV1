@@ -115,7 +115,7 @@ class ExpandingBlock(nn.Module):
 
 class UNet(nn.Module):
     def __init__(self, in_channels=3, out_channels=1,up_sample="transpose",pool="none"):
-        super(UNet_1, self).__init__()
+        super(UNet, self).__init__()
         # contracting
         self.contract1 = ContractingBlock(3, 64,pool)
         self.contract2 = ContractingBlock(64, 128,pool)
