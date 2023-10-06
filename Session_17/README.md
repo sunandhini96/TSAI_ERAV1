@@ -85,6 +85,8 @@ The model was trained with the following statistics:
 
  - The training loss decreased significantly over the course of training, indicating good convergence.
 
+## VIT Model:
+
 ### Output logs for VIT Model:
 
 | Epoch | Train Loss | Train Accuracy | Test Loss | Test Accuracy |
