@@ -71,6 +71,12 @@ case 4: StrConv+Ups+Dice Loss
 
 #### case 4: StrConv+Ups+Dice Loss
 
+<img width="506" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/f795f666-c8c1-4983-af08-83741242e743">
+
+<img width="558" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/3cb83183-e9e1-45c8-9f16-6a30ea98cf3f">
+
+![image](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/ab6566a3-5879-4099-8281-8cc2c8d0de91)
+
 
 # Second Part :
 
