@@ -249,3 +249,14 @@ def generate_mixed_image(prompt1, prompt2,num_inference_steps=50,seed=42,color_p
         output = latents_to_pil(latents)[0]
 
     return output
+    # if __name__ == "__main__":
+    # prompt = 'A campfire (oil on canvas)'
+    # sharpness_loss_scale = 200
+
+    # seed=50
+    # color_postprocessing = False
+    # num_inference_steps=50
+    # #pil_image = generate_mixed_image("an elephant", "a cat",num_inference_steps,color_postprocessing,sharpness_loss_scale,seed)
+    # pil_image = generate_image(prompt,color_postprocessing,sharpness_loss_scale,seed)
+    # #pil_image = generate_distorted_image(Image.open('/content/images (1).jpg').resize((512, 512)))
+    # pil_image.save("output1.png")
