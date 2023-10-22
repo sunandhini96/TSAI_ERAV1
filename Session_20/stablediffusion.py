@@ -24,6 +24,7 @@ if not (Path.home()/'.cache/huggingface'/'token').exists(): notebook_login()
 logging.set_verbosity_error()
 
 # Set device
+
 torch_device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 if "mps" == torch_device: os.environ['PYTORCH_ENABLE_MPS_FALLBACK'] = "1"
 
