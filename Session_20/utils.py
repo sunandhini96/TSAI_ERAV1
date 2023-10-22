@@ -29,7 +29,7 @@ unet = UNet2DConditionModel.from_pretrained("CompVis/stable-diffusion-v1-4", sub
 
 # The noise scheduler
 scheduler = LMSDiscreteScheduler(beta_start=0.00085, beta_end=0.012, beta_schedule="scaled_linear", num_train_timesteps=1000)
-
+torch_device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 # To the GPU we go!
 vae = vae.to(torch_device)
 text_encoder = text_encoder.to(torch_device)
