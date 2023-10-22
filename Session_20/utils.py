@@ -1,10 +1,9 @@
 from base64 import b64encode
 
-import numpy
 import torch
+import numpy as np
 from diffusers import AutoencoderKL, LMSDiscreteScheduler, UNet2DConditionModel
 from huggingface_hub import notebook_login
-import torch
 import torch.nn.functional as F
 # For video display:
 from IPython.display import HTML
@@ -51,16 +50,25 @@ def set_timesteps(scheduler, num_inference_steps):
     scheduler.timesteps = scheduler.timesteps.to(torch.float32)
 
 
-def sharpness_loss(images):
-    # Create a 3x3 convolutional weight with 3 input channels
-    weight = torch.ones(1, 3, 3, 3).to(images.device)
+def orange_loss(image):
+    # Convert the image to a NumPy array
+    #image = image.float()  # Convert to a more standard data type (float32)
+    #image_np = image.detach().cpu().numpy()  # Use .detach() and .cpu() to ensure compatibility
 
-    # Calculate the Laplacian of the images to measure sharpness.
-    # The Laplacian highlights edges and fine details in the images.
-    laplacian = torch.abs(F.conv2d(images, weight, padding=1))
+    # Extract the orange channel (e.g., Red and Green channels)
+    orange_channel = image[:, 0, :, :] + image[:, 1, :, :]
 
-    # Calculate the mean Laplacian to represent overall sharpness.
-    sharpness = laplacian.mean()
+    # Calculate the mean intensity of the orange channel
+    #orange_mean = np.mean(orange_channel)
 
-    return sharpness
+    # Define the target mean intensity you desire
+    target_mean = 0.8  # Replace with your desired mean intensity
+
+    # Calculate the loss based on the squared difference from the target
+    loss = torch.abs(orange_channel- target_mean).mean()
+
+    # Convert the loss to a PyTorch tensor
+    #loss = torch.tensor(loss, dtype=image.dtype)
+
+    return loss
 
