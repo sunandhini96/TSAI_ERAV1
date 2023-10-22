@@ -21,7 +21,7 @@ import os
 
 
 from utils import *
-from stable diffusion import *
+from stablediffusion import *
 
 path="/content/sample_data/Project/concept_styles"
 concept_styles={
