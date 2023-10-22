@@ -51,7 +51,7 @@ pos_emb_layer = text_encoder.text_model.embeddings.position_embedding
 position_ids = text_encoder.text_model.embeddings.position_ids[:, :77]
 position_embeddings = pos_emb_layer(position_ids)
 
-def generate_distorted_image(pil_image):
+def generate_distorted_image(pil_image,vae):
     # View a noised version
     encoded = pil_to_latent(pil_image)
     noise = torch.randn_like(encoded) # Random noise
@@ -190,7 +190,7 @@ def generate_image(prompt,concept_embed,num_inference_steps=50,color_postprocess
 
 
         if noised_image:
-            output = generate_distorted_image(latents_to_pil(latents)[0])
+            output = generate_distorted_image(latents_to_pil(latents)[0],vae)
         else:
             output = latents_to_pil(latents)[0]
 
