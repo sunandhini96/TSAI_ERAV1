@@ -20,6 +20,9 @@ from transformers import CLIPTextModel, CLIPTokenizer, logging
 import os
 
 
+from utils import *
+from stable diffusion import *
+
 path="/content/sample_data/Project/concept_styles"
 concept_styles={
     "cubex":"cubex.bin",
