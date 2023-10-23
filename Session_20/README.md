@@ -21,10 +21,12 @@ github repository : https://github.com/katipallyvig8899
 3. device.py: downloading the stable diffusion models
 4. inference.ipynb: created application using gradio
 
-### We developed model by selecting multiple styles at a time to generate image based on input text
+### We developed model by selecting multiple styles at a time to generate image based on input text and we used orange loss function
 
 # Output : 
+
 ## Output for generating noised image:
+
 ### input image:
 ![download (1)](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/51fa8789-881c-4495-858f-2334a7937769)
 
@@ -32,6 +34,7 @@ github repository : https://github.com/katipallyvig8899
 ![download](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/57a43224-e396-4623-aa20-0901d7e87be3)
 
 
+## input text : sun set across the lake
 
 ## Video link for cubex style : 
 
