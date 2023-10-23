@@ -37,5 +37,9 @@ github repository : https://github.com/katipallyvig8899
 
 https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/6e0d6356-530e-466a-bff0-d8fb66dd9ee4
 
+## Video link for xyz style : 
+
+
+https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/84114f14-caba-4e77-87aa-2617213061df
 
 
