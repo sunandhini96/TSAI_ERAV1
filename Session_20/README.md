@@ -58,4 +58,5 @@ https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/8143c7cd-5cfb-465a-b6
 
 https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/aced7033-852c-4db5-95ec-a77788c3f86d
 
+##  Hugging face link : https://huggingface.co/spaces/Gosula/Stable_diffusion_model
 
