@@ -4,7 +4,7 @@
     "cubex",
     "hours-style",
     "orange-jacket",
-    "party-girl",
+    "hub-city",
     "xyz"
 
 #  Contributors :
