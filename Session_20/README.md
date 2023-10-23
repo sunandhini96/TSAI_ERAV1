@@ -42,7 +42,9 @@ https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/6e0d6356-530e-466a-bf
 
 ## Video link for xyz style : 
 
-https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/84114f14-caba-4e77-87aa-2617213061df
+https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/8a51e7a3-e9ef-4d91-a7e2-340411f6f0c4
+
+
 
 ## Video link for hours style : 
 
