@@ -4,7 +4,7 @@
     "cubex",
     "hours-style",
     "orange-jacket",
-    "hub-city",
+    "simple-styles(2)",
     "xyz"
 
 #  Contributors :
@@ -47,5 +47,9 @@ https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/84114f14-caba-4e77-87
 ## Video link for hours style : 
 
 https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/9cecd4ac-d129-4f38-8d0d-441a86e810ba
+
+## Video link for simple styles (2) : 
+
+https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/8143c7cd-5cfb-465a-b6bf-f8758e1b120e
 
 
