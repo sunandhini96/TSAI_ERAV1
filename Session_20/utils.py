@@ -15,7 +15,7 @@ from torchvision import transforms as tfms
 from tqdm.auto import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer, logging
 import os
-
+from device import torch_device
 
 # Load the autoencoder model which will be used to decode the latents into image space.
 vae = AutoencoderKL.from_pretrained("CompVis/stable-diffusion-v1-4", subfolder="vae")
