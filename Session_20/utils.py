@@ -15,7 +15,7 @@ from torchvision import transforms as tfms
 from tqdm.auto import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer, logging
 import os
-from device import torc_device,vae,text_encoder,unet,tokenizer,scheduler,token_emb_layer,pos_emb_layer,position_embeddings
+from device import torch_device,vae,text_encoder,unet,tokenizer,scheduler,token_emb_layer,pos_emb_layer,position_embeddings
 
 
 
