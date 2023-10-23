@@ -16,7 +16,7 @@ from tqdm.auto import tqdm
 from transformers import CLIPTextModel, CLIPTokenizer, logging
 import os
 import shutil
-from device import torc_device,vae,text_encoder,unet,tokenizer,scheduler,token_emb_layer,pos_emb_layer,position_embeddings
+from device import torch_device,vae,text_encoder,unet,tokenizer,scheduler,token_emb_layer,pos_emb_layer,position_embeddings
 torch.manual_seed(1)
 if not (Path.home()/'.cache/huggingface'/'token').exists(): notebook_login()
 
