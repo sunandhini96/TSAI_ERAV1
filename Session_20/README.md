@@ -26,7 +26,8 @@ github repository : https://github.com/katipallyvig8899
 # Output : 
 ## Output for generating noised image:
 ### input image:
-![download (1)](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/ae85f361-aa68-4595-ad6e-d494a431bb79)
+![download (1)](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/51fa8789-881c-4495-858f-2334a7937769)
+
 ### output image: for the 5 th sample
 ![download](https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/57a43224-e396-4623-aa20-0901d7e87be3)
 
