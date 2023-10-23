@@ -52,4 +52,8 @@ https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/9cecd4ac-d129-4f38-8d
 
 https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/8143c7cd-5cfb-465a-b6bf-f8758e1b120e
 
+## Video link for simple orange jacket : 
+
+https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/aced7033-852c-4db5-95ec-a77788c3f86d
+
 
