@@ -1,6 +1,6 @@
 # Task 1:
 
-## We will implement value iteration and Q-learning. We will test our agents first on Gridworld.
+## We will implement Q-learning. We will test our agents first on Gridworld.
 
 ## Pseudo code:
 1. __init__  : Initializing the Q-values 
