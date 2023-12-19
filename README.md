@@ -60,7 +60,9 @@ Keep the car on the roads as much as possible: Ensure the car stays on the desig
 
 Reach the goal in the fewest steps: Guide the car to a specified destination within the city map using the roads available. The aim is to reach this destination as quickly as possible, minimizing the number of steps (or moves) taken by the car to reach the goal.
 ```
-### Youtube Video Link : (https://youtu.be/3qZBVBmfxJU)
+### Youtube Video Link :
+
+https://youtu.be/3qZBVBmfxJU
 
 ## Session_25 : 
 ### Task : Car automation using TD3 algorithm 
