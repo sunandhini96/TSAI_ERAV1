@@ -47,7 +47,7 @@ https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/6e0d6356-530e-466a-bf
 ### Hugging face app link: https://huggingface.co/spaces/Gosula/Nano_gpt_Shakespeare_data
 
 ## Session_22 :
-### TSAI Gpt : pythia-160m using model using AWS sage maker
+TSAI Gpt : pythia-160m using model using AWS sage maker
 
 ## Session_24 : 
 ### Task : Car automation using Kivy environment 
