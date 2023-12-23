@@ -11,6 +11,7 @@ Link to the dataset: (https://huggingface.co/datasets/OpenAssistant/oasst1)
 ## Files Required:
 
 s27_qlora.ipynb : Preparing the data and finetuning the model on the phi-2 model using QLORA strategy.
+
 Qlora.ipynb : Finetuned on the ybelkada/falcon-7b-sharded-bf16 model using QLoRA strategy.
 
 ## QLORA : QLoRA stands for Quantization and Low-Rank Adapters
