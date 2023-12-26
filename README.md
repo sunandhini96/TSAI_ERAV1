@@ -68,4 +68,5 @@ https://youtu.be/3qZBVBmfxJU
 ### Task : Car automation using TD3 algorithm 
 
 ## Session_27 :
-### Task : 
+### Task : AI assistant model finetuned on Microsoft Phi 2 model using QLORA strategy on Open Assistant dataset.
+### [Link for hugging face](https://huggingface.co/spaces/Gosula/ai_chatbot_phi2model_qlora)
