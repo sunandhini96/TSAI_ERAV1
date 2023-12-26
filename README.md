@@ -66,3 +66,6 @@ https://youtu.be/3qZBVBmfxJU
 
 ## Session_25 : 
 ### Task : Car automation using TD3 algorithm 
+
+## Session_27 :
+### Task : 
