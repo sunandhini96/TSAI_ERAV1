@@ -1,7 +1,6 @@
 # TSAI_ERAV1 (Course : The School of AI)
 
 # Contents :
-
 ## Session_12 :
 ### Task: Cifar 10 dataset classification using pytorch lightning
 ### Hugging face app link: https://huggingface.co/spaces/Gosula/ERA_S12
