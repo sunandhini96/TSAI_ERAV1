@@ -1,7 +1,5 @@
 # Trained Model using PyTorch lightning
 
-
-
 ## Task : Cifar 10 dataset classification 
 
 ### This repository contains implementation of the custom resnet architecture using PyTorch Lightning. I am working with the CIFAR-10 dataset to train and evaluate my model.
