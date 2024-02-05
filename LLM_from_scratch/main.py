@@ -3,7 +3,6 @@ import sys
 import time
 from pathlib import Path
 from typing import Optional, Tuple, Union
-
 import lightning as L
 import torch
 from lightning.fabric.loggers import CSVLogger
@@ -16,9 +15,9 @@ from torch.utils.data import DataLoader
 wd = Path(__file__).parent.parent.resolve()
 sys.path.append(str(wd))
 
-from lit_gpt.model import GPT, Block, Config
-from lit_gpt.packed_dataset import CombinedDataset, PackedDataset, PhiAPIDataset
-from lit_gpt.utils import (
+from model import GPT, Block, Config
+from packed_dataset import CombinedDataset, PackedDataset, PhiAPIDataset
+from utils import (
     chunked_cross_entropy,
     estimate_flops,
     get_default_supported_precision,
@@ -33,15 +32,15 @@ api_endpoint = "https://18fb37c434ff2c9f2d.gradio.live/"  # gradio api url for P
 save_interval = 1000
 eval_interval = 1000
 eval_iters = 100
-log_interval = 1
+log_interval = 100
 
 # Hyperparameters
-learning_rate = 6e-4
-batch_size = 125
-micro_batch_size = 6
+learning_rate = 6e-3
+batch_size = 8
+micro_batch_size = 2
 gradient_accumulation_steps = batch_size // micro_batch_size
 assert gradient_accumulation_steps > 0
-max_iters = 600000  # num_epochs * (epoch_size // micro_batch_size) // devices
+max_iters = 30000  # num_epochs * (epoch_size // micro_batch_size) // devices
 weight_decay = 1e-1
 beta1 = 0.9
 beta2 = 0.95
@@ -49,18 +48,16 @@ grad_clip = 1.0
 decay_lr = True
 warmup_iters = 2000
 lr_decay_iters = max_iters
-min_lr = 6e-5
+min_lr = 6e-4
 
 
 # Data proportions from https://arxiv.org/pdf/2302.13971.pdf Table 1
 data_config = [
-    ("arxiv", 2.5),
-    ("book", 4.5),
-    ("c4", 15.0),
-    ("cc", 67.0),
-    ("github", 4.5),
-    ("stackexchange", 2.0),
-    ("wikipedia", 4.5),
+    ("arxiv", 15.0),
+    ("book", 20.0),
+    ("c4", 50.0),
+    ("cc", 5.0),
+    ("wikipedia", 10.0),
 ]
 
 hparams = {
@@ -366,4 +363,4 @@ if __name__ == "__main__":
 
     from jsonargparse import CLI
 
-    CLI(setup)
+    CLI(setup(devices = 1))
