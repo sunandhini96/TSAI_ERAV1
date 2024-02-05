@@ -8,7 +8,7 @@ import torch
 from typing_extensions import Self
 
 # import lit_gpt.model
-from lit_gpt.utils import find_multiple
+from utils import find_multiple
 
 
 @dataclass
