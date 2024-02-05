@@ -29,7 +29,7 @@ from torch.serialization import normalize_storage_type
 from typing_extensions import Self
 
 if TYPE_CHECKING:
-    from lit_gpt import GPT
+    import GPT
 
 
 def find_multiple(n: int, k: int) -> int:
