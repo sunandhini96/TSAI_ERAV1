@@ -27,8 +27,8 @@ from lightning.pytorch.plugins import (
 from lightning.pytorch.utilities.rank_zero import rank_zero_only as trainer_rank_zero_only
 from torch.utils.flop_counter import FlopCounterMode
 
-from tsai_gpt.model import GPT
-from tsai_gpt.utils import num_parameters
+from model import GPT
+from utils import num_parameters
 
 GPU_AVAILABLE_FLOPS = {
     # source: https://resources.nvidia.com/en-us-tensor-core/nvidia-tensor-core-gpu-datasheet
