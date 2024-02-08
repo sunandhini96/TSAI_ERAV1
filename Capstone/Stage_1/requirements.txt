@@ -1,0 +1,11 @@
+torch
+peft
+accelerate
+transformers==4.37
+einops
+git+https://github.com/m-bain/whisperx.git
+bitsandbytes
+wandb
+ffmpeg
+pydub
+gradio
