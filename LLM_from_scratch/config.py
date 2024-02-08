@@ -139,7 +139,7 @@ class Config:
         # `self._mlp_class` cannot be the type to keep the config json serializable
         import model
 
-        return getattr(lit_gpt.model, self._mlp_class)
+        return getattr(model, self._mlp_class)
 
     @property
     def norm_class(self) -> Type:
