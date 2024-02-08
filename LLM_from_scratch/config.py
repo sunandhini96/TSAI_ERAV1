@@ -137,7 +137,7 @@ class Config:
     @property
     def mlp_class(self) -> Type:
         # `self._mlp_class` cannot be the type to keep the config json serializable
-        import lit_gpt.model
+        import model
 
         return getattr(lit_gpt.model, self._mlp_class)
 
@@ -145,7 +145,7 @@ class Config:
     def norm_class(self) -> Type:
         # `self._norm_class` cannot be the type to keep the config json serializable
         if self._norm_class == "RMSNorm":
-            from lit_gpt.rmsnorm import RMSNorm
+            from rmsnorm import RMSNorm
 
             return RMSNorm
         return getattr(torch.nn, self._norm_class)
