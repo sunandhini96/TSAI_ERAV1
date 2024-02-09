@@ -51,9 +51,8 @@ class llavadataset(Dataset):
   def __getitem__(self, idx):
 
     # from image perspective
-    img_url = self.caption_dataset[idx][2]
-    caption = self.caption_dataset[idx][3]
-
+    img_url = self.caption_dataset[idx]['image_url']
+    caption = self.caption_dataset[idx]['caption']
     # image load
     image_load = Image.open(requests.get(img_url,stream=True).raw)
     image_processed = self.processor(images=image_load, return_tensors="pt") ['pixel_values']
