@@ -54,7 +54,8 @@ class llavadataset(Dataset):
     img_url = self.caption_dataset[idx]['image_url']
     caption = self.caption_dataset[idx]['caption']
     # image load
-    image_load = Image.open(requests.get(img_url,stream=True).raw)
+    #image_load = Image.open(requests.get(img_url,stream=True).raw)
+    image_load = Image.open(img_url)
     image_processed = self.processor(images=image_load, return_tensors="pt") ['pixel_values']
     image_processed = image_processed.squeeze(0)
     a = self.tokenizer(caption, return_tensors="pt", return_attention_mask=False)
