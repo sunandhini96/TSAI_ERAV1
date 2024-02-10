@@ -67,8 +67,8 @@ class CLIPPhi2Model(torch.nn.Module):
 
         # load checkpoint weights
         if os.path.isfile('model_chkpt/clipphi_proj.pth'):
-            self.projection.load_state_dict(torch.load('model_chkpt/clipphi_proj.pth'))
-            self.resblock.load_state_dict(torch.load('model_chkpt/clipphi_resblock.pth'))
+            self.projection.load_state_dict(torch.load('/content/drive/MyDrive/capstone/model_chkpt/clipphi_proj.pth'))
+            self.resblock.load_state_dict(torch.load('/content/drive/MyDrive/capstone/model_chkpt/clipphi_resblock.pth'))
 
 
     def generate(self,images,max_length,tokenizer):
@@ -213,8 +213,8 @@ def train_model(model, train_loader, val_dataloader,optimizer, device,max_steps,
             # save model
             if step % model_save_step == 0 or (step == max_steps):
                 print("Saving Checkpoint for step : ", step)
-                torch.save(model.projection.state_dict(),'./model_chkpt/clipphi_proj.pth')
-                #torch.save(model.resblock.state_dict(),'./model_chkpt/clipphi_resblock.pth')
+                torch.save(model.projection.state_dict(),'/content/drive/MyDrive/capstone/model_chkpt/clipphi_proj.pth')
+                torch.save(model.resblock.state_dict(),'/content/drive/MyDrive/capstone/model_chkpt/clipphi_resblock.pth')
                
             # check random validation of images
             if step % model_val_step == 0 or (step == max_steps):
