@@ -77,7 +77,7 @@ class CLIPPhi2Model(torch.nn.Module):
         clip_outputs = self.clip_model(**images)
         # remove cls token
         images = clip_outputs.last_hidden_state[:,1:,:]
-        image_embeds = self.projection(images).to(torch.float16)
+        image_embeds = self.projection(images)
         image_embeds = self.resblock(image_embeds).to(torch.float16)
 
         # add bos_token embedding from phi2
