@@ -58,7 +58,7 @@ class CLIPPhi2Model(torch.nn.Module):
 
         # projection layers
         self.projection = torch.nn.Linear(clip_embed, phi_embed)
-        #self.resblock = SimpleResBlock(phi_embed)
+        self.resblock = SimpleResBlock(phi_embed)
 
         # Freeze Weights
         for network in [self.phi_model, self.clip_model]:
@@ -68,7 +68,7 @@ class CLIPPhi2Model(torch.nn.Module):
         # load checkpoint weights
         if os.path.isfile('model_chkpt/clipphi_proj.pth'):
             self.projection.load_state_dict(torch.load('model_chkpt/clipphi_proj.pth'))
-            #self.resblock.load_state_dict(torch.load('model_chkpt/clipphi_resblock.pth'))
+            self.resblock.load_state_dict(torch.load('model_chkpt/clipphi_resblock.pth'))
 
 
     def generate(self,images,max_length,tokenizer):
