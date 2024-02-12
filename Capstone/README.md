@@ -77,7 +77,8 @@ Step 12000/20000: Avg Running Loss = 4.518374887943268
 ```
 
 #### Training Loss:
-- <img width="398" alt="capstone_img_1" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/f7b673e8-75ac-4a33-9557-73be34ce68e0">
+
+<img width="398" alt="capstone_img_1" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/f7b673e8-75ac-4a33-9557-73be34ce68e0">
 
 # Stage 2: Fine-tuning
 
@@ -87,11 +88,9 @@ Step 12000/20000: Avg Running Loss = 4.518374887943268
   
  <img width="821" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/d7606777-fef8-48b5-b0de-de2b8f4403e2">
 
-
 - We are using Qlora strategy we trained the model parameters (adapters).
 ```
 trainable params: 94,371,840 || all params: 2,874,055,680 || trainable%: 3.2835773035545364
-
 ```
 - The training started with a loss of 11.9 and gradually decreased to 5.6 over the course of 10,000 steps.
 - Training Logs (initially):
