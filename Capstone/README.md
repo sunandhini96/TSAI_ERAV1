@@ -121,4 +121,8 @@ Saving Checkpoint
 Training finished.
 ```
 
-# Creating hugging face space: [App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
+We convert audio to text embeddings using the Whisper model, then concatenate these embeddings with image or text embeddings based on the inputs passed to the model to obtain the text output
+
+# Creating hugging face space: 
+[App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
+
