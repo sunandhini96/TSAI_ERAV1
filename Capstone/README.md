@@ -18,12 +18,10 @@
 
 # Stage 1: Pre-training: 
 ### Training the projection model
-
 Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, image as inputs producing text-based outputs. 
 - We utilized the Microsoft Phi 2 model, an LLM, which processes text inputs. To deal with image inputs, we convert them into embeddings understandable by Phi 2 using a projection layer and a projection model.
   
 ### Dataset:
-
 - In stage 1 dealing with images as inputs. We used [COCO-2017 dataset](https://cocodataset.org/#download).
   
 ### Model architecture:
