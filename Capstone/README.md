@@ -51,9 +51,31 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 - The model is trained to generate captions for the images, with the loss calculated between the ground truth captions and the predicted captions.
 - Resources used to train: NVIDIA-A100 40GB GPU (Google colab). Duration for training the model is 6 hours with a batch size of 2.
 ### Training Process:
-- Trained the model over 10,000 steps.
-- Training logs [end of the training]: Loss started from 7.8 and reached to 5.4.
-- <img width="655" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/214f9870-535d-4736-acad-7911033ac102">
+- Trained the model over 20,000 steps.
+  
+- Training logs [training across 12,000 (minimum loss)]: Loss started from 9.1 and reached to 5.4.
+  
+```
+Saving Checkpoint for step :  12000
+0 - Target captions:
+ a young boy swinging a baseball bat at a ball <|endoftext|>  
+0 - predicted_captions:
+ A boy is playing with a baseball in a field a. a. a. a. a<|endoftext|> 
+1 - Target captions:
+ a couple of people that are shopping for some food<|endoftext|><|endoftext|>  
+1 - predicted_captions:
+ A man is carrying a large amount of items in a. a. a. a. a<|endoftext|> 
+2 - Target captions:
+ A couple of glass vases near a window sill.<|endoftext|>  
+2 - predicted_captions:
+ A table with a vase of flowers on it a the. a. a. the.<|endoftext|> 
+3 - Target captions:
+ The young child is sitting at the table to eat.   
+3 - predicted_captions:
+ A table with a plate of food on it a a a a a a a a a a<|endoftext|> 
+Step 12000/20000: Avg Running Loss = 4.518374887943268
+```
+
 #### Training Loss:
 - <img width="398" alt="capstone_img_1" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/f7b673e8-75ac-4a33-9557-73be34ce68e0">
 
