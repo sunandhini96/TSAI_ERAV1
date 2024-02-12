@@ -51,7 +51,7 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 ### Training Process:
 - Trained the model over 20,000 steps.
   
-- Training logs [training across 12,000 (minimum loss)]: Loss started from 9.1 and reached to 5.36.
+- Training logs [training across 12,000 (minimum loss)]: Training loss decreased from 9.1 to 5.36 over 20,000 steps, with the minimum loss occurring at step 12,000. Below are the corrected predictions.
   
 ```
 Saving Checkpoint for step :  12000
