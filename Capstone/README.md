@@ -90,8 +90,35 @@ Step 12000/20000: Avg Running Loss = 4.518374887943268
 ```
 trainable params: 94,371,840 || all params: 2,874,055,680 || trainable%: 3.2835773035545364
 ```
-- The training started with a loss of 11.9 and gradually decreased to 5.6 over the course of 10,000 steps.
-- Training Logs (initially):
-<img width="701" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/50a03253-54ad-4308-b463-bf51638a01ac">
+- The training started with a loss of 3.72 and gradually decreased to 2.9 over the course of 20,000 steps.
+- Training Logs (end of the training):
+```
+Saving Checkpoint
+Iteration 19100/20000, Loss: 3.3593673706054688
+Saving Checkpoint
+Iteration 19200/20000, Loss: 3.1470537185668945
+Saving Checkpoint
+Iteration 19300/20000, Loss: 3.0588927268981934
+Saving Checkpoint
+Iteration 19400/20000, Loss: 3.888509511947632
+Saving Checkpoint
+Iteration 19500/20000, Loss: 3.704146385192871
+Saving Checkpoint
+Iteration 19600/20000, Loss: 3.248237133026123
+Saving Checkpoint
+Iteration 19700/20000, Loss: 3.572849750518799
+Saving Checkpoint
+Iteration 19800/20000, Loss: 3.5760674476623535
+Saving Checkpoint
+Iteration 19900/20000, Loss: 3.6919779777526855
+Saving Checkpoint
+Iteration 20000/20000, Loss: 2.959592580795288
+Image: http://images.cocodataset.org/train2017/000000048282.jpg
+Question: What type of location is the skateboarder at? [QA]
+Answer:   The skateboarder is at a skate park, most likely on a half-pipe or a ramp, which allows skateboarders to gain momentum and perform tricks.<|endoftext|>
+Model Predicted Ans: The skateboarder is at a skate park, which is a designated area for skateboarding with various ramps, rails, and other features for skateboarders to perform tricks and maneuvers.  The skate park is a place where skateboarders can practice and showcase their skills.  The skate park is a designated area for skateboarding, providing a safe and controlled environment for skateboarders to perform tricks and maneuvers.  The skate park is a place where skateboarders can practice and
+Saving Checkpoint
+Training finished.
+```
 
 # Creating hugging face space: [App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
