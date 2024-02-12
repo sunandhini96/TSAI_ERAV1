@@ -51,7 +51,7 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 ### Training Process:
 - Trained the model over 20,000 steps.
   
-- Training logs [training across 12,000 (minimum loss)]: Loss started from 9.1 and reached to 5.4.
+- Training logs [training across 12,000 (minimum loss)]: Loss started from 9.1 and reached to 5.36.
   
 ```
 Saving Checkpoint for step :  12000
@@ -76,7 +76,7 @@ Step 12000/20000: Avg Running Loss = 4.518374887943268
 
 #### Training Loss:
 
-<img width="398" alt="capstone_img_1" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/f7b673e8-75ac-4a33-9557-73be34ce68e0">
+<img width="418" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/cfea8623-14d7-4fba-af53-189b4bcd6bda">
 
 # Stage 2: Fine-tuning
 
