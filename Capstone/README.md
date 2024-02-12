@@ -10,9 +10,11 @@
 
 # Problem Statement: 
 ### We are building Multi Modal Large Language Model (LLM) it takes inputs as image/audio apart from text.
+<img width="824" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/750a5919-6c24-466b-a8a6-c15961aa24de">
+
+
 # Approach: 
 - Here, we utilized the Microsoft Phi-2 model as LLM. For fine-tuning, we adopted the Qlora strategy.
-
 
 # Stage 1: Pre-training: 
 ### Training the projection model
@@ -22,6 +24,9 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 ### Dataset:
 - In stage 1 dealing with images as inputs. We used [COCO-2017 dataset](https://cocodataset.org/#download).
 ### Model architecture:
+
+<img width="808" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/0ab61bd5-db27-4bbb-a63b-f66ab8284e2e">
+
 - Images are processed using the CLIP model (wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M) to generate embeddings.
 - Here we trained projection layer and projection model only. Clip model and Phi-2 models are frozen.
 - These image embeddings [B,50,768]  B is the Batch Size, excluding the class embedding output is [B,49,768], are passed through a projection layer [B,49,2560], followed by a SimpleResBlock projection model,  this model is captures the context of the image.
@@ -53,7 +58,11 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 
 ### Fine tuning projection and phi 2 model
 - By using [Instruct 150 k dataset](https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K) fine tuned LLM model to understand the conversations from the images.
-- In this stage training the Phi-2 and Projection layer and Projection model.
+- In this stage training the Phi-2 and Projection layer and Projection model shown in the figure.
+  
+ <img width="821" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/d7606777-fef8-48b5-b0de-de2b8f4403e2">
+
+
 - We are using Qlora strategy we trained the model parameters (adapters).
 ```
 trainable params: 94,371,840 || all params: 2,874,055,680 || trainable%: 3.2835773035545364
