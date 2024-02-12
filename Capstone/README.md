@@ -121,6 +121,9 @@ Saving Checkpoint
 Training finished.
 ```
 
+<img width="399" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/2add8187-4d02-4681-9414-179f02f376ea">
+
+
 We convert audio to text embeddings using the Whisper model, then concatenate these embeddings with image or text embeddings based on the inputs passed to the model to obtain the text output
 
 # Creating hugging face space: 
