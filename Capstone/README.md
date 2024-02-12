@@ -9,27 +9,30 @@
 - The output is text 
 
 # Problem Statement: 
-### We are building Multi Modal Large Language Model (LLM) it takes inputs as image/audio apart from text.
+### Our project introduces a Multi-Modal Large Language Model (LLM) capable of processing not only text but also images and audio inputs. 
+
 <img width="824" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/750a5919-6c24-466b-a8a6-c15961aa24de">
 
-
 # Approach: 
-- Here, we utilized the Microsoft Phi-2 model as LLM. For fine-tuning, we adopted the Qlora strategy.
+- Here, we utilized the Microsoft Phi-2 model as the backbone for Multi Modal LLM. To optimize the Microsoft Phi-2 model for multi-modal tasks, we adopted the Qlora fine-tuning strategy. 
 
 # Stage 1: Pre-training: 
 ### Training the projection model
 
-Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, image, and audio inputs, producing text-based outputs. 
-- We utilized the Microsoft Phi 2 model, an LLM, which processes text inputs. To deal with image and audio inputs, we convert them into embeddings understandable by Phi 2 using a projection layer and a projection model.
+Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, image as inputs producing text-based outputs. 
+- We utilized the Microsoft Phi 2 model, an LLM, which processes text inputs. To deal with image inputs, we convert them into embeddings understandable by Phi 2 using a projection layer and a projection model.
+  
 ### Dataset:
+
 - In stage 1 dealing with images as inputs. We used [COCO-2017 dataset](https://cocodataset.org/#download).
+  
 ### Model architecture:
 
 <img width="808" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/0ab61bd5-db27-4bbb-a63b-f66ab8284e2e">
 
 - Images are processed using the CLIP model (wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M) to generate embeddings.
-- Here we trained projection layer and projection model only. Clip model and Phi-2 models are frozen.
-- These image embeddings [B,50,768]  B is the Batch Size, excluding the class embedding output is [B,49,768], are passed through a projection layer [B,49,2560], followed by a SimpleResBlock projection model,  this model is captures the context of the image.
+- Here we trained projection layer and projection model only. Clip model and Phi-2 models are remain frozen.
+- These image embeddings [B,50,640]  B is the Batch Size, excluding the class embedding output is [B,49,640], are passed through a projection layer [B,49,2560], followed by a SimpleResBlock projection model,  this model is captures the context of the image.
 ```
   class SimpleResBlock(nn.Module):
     def __init__(self, phi_embed):
