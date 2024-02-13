@@ -14,7 +14,7 @@
 <img width="824" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/750a5919-6c24-466b-a8a6-c15961aa24de">
 
 # Approach: 
-- Here, we utilized the Microsoft Phi-2 model as the backbone for Multi Modal LLM. To optimize the Microsoft Phi-2 model for multi-modal tasks, we adopted the Qlora fine-tuning strategy. 
+- Here, we utilized the Microsoft Phi-2 model as the backbone for Multi Modal LLM. To optimize the Microsoft Phi-2 model for multi-modal tasks, we adopted the Qlora fine-tuning strategy. Know more about [qlora](https://arxiv.org/abs/2305.14314)
 
 # Stage 1: Pre-training: 
 ### Training the projection model
