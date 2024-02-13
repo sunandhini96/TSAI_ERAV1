@@ -131,7 +131,14 @@ We convert audio to text embeddings using the Whisper model, then concatenate th
 
 # Output:
 ### Input : Text 
-<img width="1133" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1d750553-574b-4295-bd69-293b5cd5eab9">
+<img width="1148" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/160763b0-4596-46d7-9021-fc74d7ec4531">
+
 
 ### Input Audio: Explain about the image
-<img width="1154" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/54828115-0c27-4c34-accc-3383d714419a">
+<img width="1139" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1f28896d-6967-44b0-a612-1ee98f7b3410">
+
+
+## Improvements:
+- Increase the duration of training improves the performance of the model
+- Hyper parameter tuning
+  
