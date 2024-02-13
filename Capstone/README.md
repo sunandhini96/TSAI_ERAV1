@@ -14,7 +14,7 @@
 <img width="824" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/750a5919-6c24-466b-a8a6-c15961aa24de">
 
 # Approach: 
-- Here, we utilized the Microsoft Phi-2 model as the backbone for Multi Modal LLM. To optimize the Microsoft Phi-2 model for multi-modal tasks, we adopted the Qlora fine-tuning strategy. Know more about [qlora](https://arxiv.org/abs/2305.14314)
+- Here, we utilized the Microsoft Phi-2 model as the backbone for Multi Modal LLM. To optimize the Microsoft Phi-2 model for multi-modal tasks, we adopted the Qlora fine-tuning strategy. Know more about qlora refer here [qlora](https://arxiv.org/abs/2305.14314).
 
 # Stage 1: Pre-training: 
 ### Training the projection model
@@ -28,6 +28,7 @@ Our objective in Stage 1 is to build a Multi-Modal LLM that processes text, imag
 
 <img width="808" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/0ab61bd5-db27-4bbb-a63b-f66ab8284e2e">
 
+LLAVA Paper : (https://arxiv.org/pdf/2304.08485.pdf)
 - Images are processed using the CLIP model (wkcn/TinyCLIP-ViT-61M-32-Text-29M-LAION400M) to generate embeddings.
 - Here we trained projection layer and projection model only. Clip model and Phi-2 models are remain frozen.
 - These image embeddings [B,50,640]  B is the Batch Size, excluding the class embedding output is [B,49,640], are passed through a projection layer [B,49,2560], followed by a SimpleResBlock projection model,  this model is captures the context of the image.
