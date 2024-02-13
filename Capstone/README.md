@@ -129,3 +129,5 @@ We convert audio to text embeddings using the Whisper model, then concatenate th
 # Creating hugging face space: 
 [App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
 
+# Output:
+<img width="1133" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1d750553-574b-4295-bd69-293b5cd5eab9">
