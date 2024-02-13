@@ -130,4 +130,8 @@ We convert audio to text embeddings using the Whisper model, then concatenate th
 [App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
 
 # Output:
+### Input : Text 
 <img width="1133" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1d750553-574b-4295-bd69-293b5cd5eab9">
+
+### Input Audio: Explain about the image
+<img width="1154" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/54828115-0c27-4c34-accc-3383d714419a">
