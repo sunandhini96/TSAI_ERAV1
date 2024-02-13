@@ -131,7 +131,8 @@ We convert audio to text embeddings using the Whisper model, then concatenate th
 
 # Output:
 ### Input : Text 
-<img width="1148" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/160763b0-4596-46d7-9021-fc74d7ec4531">
+<img width="1255" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/9bfc9694-48c3-459a-9958-f926233646d5">
+
 
 
 ### Input Audio: Explain about the image
