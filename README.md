@@ -69,3 +69,27 @@ https://youtu.be/3qZBVBmfxJU
 ## Session_27 :
 ### Task : AI assistant model finetuned on Microsoft Phi 2 model using QLORA strategy on Open Assistant dataset.
 ### [Link for hugging face](https://huggingface.co/spaces/Gosula/ai_chatbot_phi2model_qlora)
+
+## LLM from Scratch:
+### Task: Building an LLM from scratch using Microsoft Phi-2 model
+
+## Capstone (Multi Modal LLM):
+# Task: 
+### To make a multi-modal LLM that can take these inputs:
+- Text
+- Image
+- Audio 
+## Output : 
+- The output is text
+### Hugging face space app link: 
+[App link](https://huggingface.co/spaces/Gosula/MultimodalLLM)
+
+
+### Input : Text 
+<img width="1255" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/9bfc9694-48c3-459a-9958-f926233646d5">
+
+
+
+### Input Audio: Explain about the image
+<img width="1139" alt="image" src="https://github.com/sunandhini96/TSAI_ERAV1/assets/63030539/1f28896d-6967-44b0-a612-1ee98f7b3410">
+
