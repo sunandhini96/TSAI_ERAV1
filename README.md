@@ -1,5 +1,4 @@
 # TSAI_ERAV1 (Course : The School of AI)
-
 # Contents :
 ## Session_12 :
 ### Task: Cifar 10 dataset classification using pytorch lightning
